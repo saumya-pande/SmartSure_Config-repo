@@ -56,6 +56,16 @@ resilience4j:
     instances:
       auth-service:
         base-config: default
+      notification-service:
+        base-config: default
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
       POLICY-SERVICE:
         base-config: default
       CLAIMS-SERVICE:
