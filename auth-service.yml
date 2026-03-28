@@ -33,6 +33,7 @@ eureka:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:900000}
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:86400000}
 
 springdoc:
   api-docs:
@@ -69,6 +70,11 @@ management:
   tracing:
     sampling:
       probability: 1.0
+    propagation:
+      type: b3
+  observations:
+    key-values:
+      application: ${spring.application.name}
   zipkin:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
