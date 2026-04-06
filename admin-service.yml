@@ -38,6 +38,9 @@ springdoc:
 
 spring.cloud:
   openfeign:
+    httpclient:
+      hc5:
+        enabled: true
     circuitbreaker:
       enabled: true
 
