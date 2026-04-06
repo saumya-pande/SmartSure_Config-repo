@@ -12,8 +12,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   rabbitmq:
-    host: 127.0.0.1
+    host: ${SPRING_RABBITMQ_HOST:localhost}
     port: 5672
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
   jpa:
     hibernate:
       ddl-auto: update

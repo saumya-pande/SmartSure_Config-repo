@@ -6,10 +6,10 @@ spring:
     name: notification-service
   
   rabbitmq:
-    host: 127.0.0.1
+    host: ${SPRING_RABBITMQ_HOST:localhost}
     port: 5672
-    username: guest
-    password: guest
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
 
   mail:
     host: smtp.gmail.com
@@ -71,7 +71,3 @@ management:
   zipkin:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
-      POLICY-SERVICE:
-        base-config: default
-      CLAIMS-SERVICE:
-        base-config: default

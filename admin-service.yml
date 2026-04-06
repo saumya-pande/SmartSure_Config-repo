@@ -50,6 +50,11 @@ resilience4j:
         wait-duration-in-open-state: 10s
         permitted-number-of-calls-in-half-open-state: 5
         sliding-window-type: COUNT_BASED
+        ignore-exceptions:
+          - feign.FeignException.NotFound
+          - feign.FeignException.BadRequest
+          - feign.FeignException.Conflict
+          - feign.FeignException.UnprocessableEntity
     instances:
       AUTH-SERVICE:
         base-config: default
