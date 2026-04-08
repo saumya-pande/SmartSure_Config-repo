@@ -54,10 +54,7 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 5
         sliding-window-type: COUNT_BASED
         ignore-exceptions:
-          - feign.FeignException.NotFound
-          - feign.FeignException.BadRequest
-          - feign.FeignException.Conflict
-          - feign.FeignException.UnprocessableEntity
+          - com.dev.dashboard.exception.DownstreamServiceException
     instances:
       AUTH-SERVICE:
         base-config: default

@@ -59,6 +59,8 @@ resilience4j:
         wait-duration-in-open-state: 10s
         permitted-number-of-calls-in-half-open-state: 5
         sliding-window-type: COUNT_BASED
+        ignore-exceptions:
+          - com.dev.claimsservice.exception.DownstreamServiceException
     instances:
       auth-service:
         base-config: default
