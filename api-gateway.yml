@@ -3,6 +3,13 @@ server:
   port: 8080
 
 spring:
+  codec:
+    max-in-memory-size: 20MB
+  webflux:
+    multipart:
+      max-in-memory-size: 20MB
+      max-disk-usage-per-part: 20MB
+      max-parts: 10
   cloud:
     gateway:
       server:

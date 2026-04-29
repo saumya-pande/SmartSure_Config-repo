@@ -5,6 +5,10 @@ server:
 spring:
   application:
     name: auth-service
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 20MB
   lifecycle:
     timeout-per-shutdown-phase: 30s
   datasource:
@@ -48,7 +52,7 @@ springdoc:
   override-with-generic-response: false
 
 app:
-  upload-dir: E:/SmartSure/uploads/ 
+  upload-dir: ${UPLOAD_DIR:E:/SmartSure/uploads/}
 spring.cloud:
   openfeign:
     circuitbreaker:

@@ -43,7 +43,7 @@ springdoc:
     enabled: false
 
 file:
-  upload-dir: E:/SmartSure/claims-uploads/
+  upload-dir: ${UPLOAD_DIR:E:/SmartSure/claims-uploads/}
 
 spring.cloud:
   openfeign:
